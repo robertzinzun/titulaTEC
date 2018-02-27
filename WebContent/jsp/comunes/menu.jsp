@@ -17,8 +17,31 @@
           <li><a href="#">Consulta general</a></li>
         </ul>
       </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Carreras <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Alta de Carreras</a></li>
+          <li><a href="#">Consulta general</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Aulas <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Alta de Aulas</a></li>
+          <li><a href="#">Consulta general</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Requesitos <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Alta de Requisitos</a></li>
+          <li><a href="#">Consulta general</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Opciones <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Alta de Opciones</a></li>
+          <li><a href="#">Consulta general</a></li>
+        </ul>
+      </li>
       
-      <li><a href="#">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
