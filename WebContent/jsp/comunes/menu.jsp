@@ -5,6 +5,12 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Alta de Usuarios</a></li>
+          <li><a href="#">Consulta general</a></li>
+        </ul>
+      </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Alumnos <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Alta de Alumnos</a></li>
@@ -44,8 +50,12 @@
       
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuario <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Editar perfil</a></li>
+          <li><a href="#">Cerrar Sesi&oacute;n</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
