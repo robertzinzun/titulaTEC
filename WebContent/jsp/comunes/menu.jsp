@@ -29,7 +29,7 @@
           <li><a href="#">Consulta general</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Requesitos <span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Requisitos <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Alta de Requisitos</a></li>
           <li><a href="#">Consulta general</a></li>
