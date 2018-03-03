@@ -32,7 +32,7 @@
 						<input id="password" type="password" class="form-control" name="password" placeholder="password" required="required">
 					</div>
 						<input type="submit" value="Enviar" class="btn btn-info" />
-						<input type="button" value="Registrar usuario" class="btn btn-info" />
+						<input type="button" value="Registrar usuario" class="btn btn-info" onclick="reenviar('acceso?op=a');"/>
 						<a href="jsp/comunes/principal.jsp">Principal</a>
 				</form>
 			</div>
