@@ -47,6 +47,11 @@
           <li><a href="#">Consulta general</a></li>
         </ul>
       </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Ayuda<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+          <li><a href="#">Acerca de</a></li>
+        </ul>
+      </li>
       
     </ul>
     <ul class="nav navbar-nav navbar-right">

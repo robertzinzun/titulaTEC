@@ -1,7 +1,7 @@
 <%@ include file="../comunes/header.jsp" %>
 <%@ include file="../comunes/menu.jsp" %>
 <div class="container">
-<div class="mainbox col-md-6 col-md-offset-2">
+<div class="mainbox col-md-8 col-md-offset-2">
 <div class="panel panel-info ">
 <div class="panel-heading"><div class="panel-title">Listado General Usuarios</div></div>
 <div class="panel-body">
@@ -12,16 +12,15 @@ placeholder="Busqueda por nombre del usuario" class="form-control">
 <table class="table table-hover table-bordered">
 <caption>
 <a href="#" class="btn btn-info"><img src="/titulaTEC/imagenes/add.gif">Agregar Usuario</a>
-<button><img src="/titulaTEC/imagenes/eliminar.png"></button>
 </caption>
 
 <tr>
-	<td>Nombre</td>
-	<td>Password</td>
-	<td>Email</td>
-	<td>Tipo</td>
-	<td>Editar</td>
-	<td>Eliminar</td>
+	<th>Nombre</th>
+	<th>Password</th>
+	<th>Email</th>
+	<th>Tipo</th>
+	<th>Editar</th>
+	<th>Eliminar</th>
 </tr>
 <tr>
 	<td>juanito</td>
@@ -37,7 +36,7 @@ placeholder="Busqueda por nombre del usuario" class="form-control">
 	<td>pedro@gmail.com</td>
 	<td>P</td>
 	<td><a href="#"><img src="/titulaTEC/imagenes/editar.png"></a></td>
-	<td><a href="#" data-toggle="modal" data-target="#myModal" ><img src="/titulaTEC/imagenes/eliminar.png"></a></td>
+	<td><a href="#"><img src="/titulaTEC/imagenes/eliminar.png" onclick="eliminar('2','pedro','usuario');" data-toggle="modal" data-target="#myModal"></a></td>
 </tr>
 <tr>
 	<td>Admin</td>
@@ -49,36 +48,30 @@ placeholder="Busqueda por nombre del usuario" class="form-control">
 </tr>
 </table>
 <input type="button" value="Regresar" class="btn btn-info">
+</div>
+</div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-
-  <!-- Trigger the modal with a button 
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-  -->
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Eliminaci&oacute;n de Usuarios</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        </div>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Eliminaci&oacute;n de Registros</h4>
       </div>
-      
+      <div class="modal-body">
+        <p id="texto"></p>
+        
+      </div>
+      <div class="modal-footer">
+        <div id="boton"></div>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+      </div>
     </div>
+
   </div>
-  
+  </div>
 
-
-</div>
-</div>
-</div>
 </div>
 <%@ include file="../comunes/footer.jsp"%>

@@ -11,7 +11,9 @@
 	<input type="text" name="nombre" placeholder="Nombre de Usuario" required="required" class="form-control">
 	<br>
 	<label>Contrase&ntilde;a</label>
-	<input type="password" name="pwd" placeholder="Contraseña" required="required" class="form-control">
+	<input type="password" name="pwd" placeholder="Contraseña" required="required" class="form-control" oninput="verPwdChange();">
+	<p id="pwd"></p>
+	<label class="checkbox-nline"><input type="checkbox" id="verpwd" class="checbox-inline" onclick="mostrarPwd();"> Ver contraseña</label>
 	<br>
 	<label>Email:</label>
 	<input type="email" name="email" placeholder="Email" required="required" class="form-control">
