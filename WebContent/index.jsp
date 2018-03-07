@@ -6,6 +6,7 @@
 <title>INGRESO A TITULATEC</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css" />
 <link rel="stylesheet" href="css/bootstrap.min.css" />
+<script src="js/Global.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
@@ -32,7 +33,7 @@
 						<input id="password" type="password" class="form-control" name="password" placeholder="password" required="required">
 					</div>
 						<input type="submit" value="Enviar" class="btn btn-info" />
-						<input type="button" value="Registrar usuario" class="btn btn-info" onclick="reenviar('acceso?op=a');"/>
+						<input type="button" value="Registrar usuario" class="btn btn-info" onclick="reenviar('Usuarios?op=n');"/>
 						<a href="jsp/comunes/principal.jsp">Principal</a>
 				</form>
 			</div>
