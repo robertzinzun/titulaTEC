@@ -2,6 +2,7 @@
  * 
  */
 function reenviar(url){
+	alert('Enviando a:'+url);
 	location.href=url;
 }
 function eliminar(id,nombre,tipo){
