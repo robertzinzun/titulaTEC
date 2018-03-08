@@ -33,12 +33,10 @@ public class Usuarios extends HttpServlet {
 		/*Logica de las peticiones*/
 		String op=request.getParameter("op");
 		RequestDispatcher rd=request.getRequestDispatcher("jsp/comunes/principal.jsp");
-		System.out.println("path:"+request.getContextPath());
-		String path=request.getContextPath();
 		switch(op){
 		case "n":
 			rd=request.getRequestDispatcher("jsp/usuarios/altausuario.jsp");
-			
+			System.out.println("path: " + request.getContextPath());
 		case "i":
 		case "ci":
 		case "e":
