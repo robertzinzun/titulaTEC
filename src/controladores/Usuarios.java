@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Usuarios
  */
-@WebServlet(name="usuarios",urlPatterns="/Usuarios")
+//@WebServlet(name="usuarios",urlPatterns="/Usuarios")
 public class Usuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,6 +33,8 @@ public class Usuarios extends HttpServlet {
 		/*Logica de las peticiones*/
 		String op=request.getParameter("op");
 		RequestDispatcher rd=request.getRequestDispatcher("jsp/comunes/principal.jsp");
+		System.out.println("path:"+request.getContextPath());
+		String path=request.getContextPath();
 		switch(op){
 		case "n":
 			rd=request.getRequestDispatcher("jsp/usuarios/altausuario.jsp");
