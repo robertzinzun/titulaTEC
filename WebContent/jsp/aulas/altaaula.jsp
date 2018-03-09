@@ -9,7 +9,7 @@
 	<label for="nombre">Nombre del aula:</label>
 	<input type="text" name="nombre" placeholder="Nombre del aula" required="required" class="form-control" id="nombre">
 	<label for="ubi">Ubicaci&oacute;n</label>
-	<select class="" name="ubi",id="ubi">
+	<select class="form-control" name="ubi",id="ubi">
 		<option value=""></option>
 		<option value="ep">Edificio Principal</option>
 		<option value="cc">Centro de Computo</option>
