@@ -23,7 +23,7 @@
 				<div class="panel-title">Incio de Sesion</div>
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" action="acceso?op=l" method="post">
 					<div style="margin-bottom: 25px" class="input-group">
 						<span class="input-group-addon">Usuario:</span> 
 						<input id="username" type="text" class="form-control" name="username" value="" placeholder="username" required="required">
@@ -33,7 +33,7 @@
 						<input id="password" type="password" class="form-control" name="password" placeholder="password" required="required">
 					</div>
 						<input type="submit" value="Enviar" class="btn btn-info" />
-						<input type="button" value="Registrar usuario" class="btn btn-info" onclick="reenviar('Usuarios?op=n');"/>
+						<input type="button" value="Registrar usuario" class="btn btn-info" onclick="reenviar('usuarios?op=n');"/>
 						<a href="jsp/comunes/principal.jsp">Principal</a>
 				</form>
 			</div>

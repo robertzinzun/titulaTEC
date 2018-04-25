@@ -1,6 +1,7 @@
 package controladores;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,55 +10,46 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import datos.AulaDAO;
+
 /**
- * Servlet implementation class Usuarios
+ * Servlet implementation class Aulas
  */
-@WebServlet(name="usuarios",urlPatterns="/usuarios")
-public class Usuarios extends HttpServlet {
+@WebServlet(name="aulas",urlPatterns="/aulas")
+public class Aulas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Usuarios() {
+    public Aulas() {
         super();
         // TODO Auto-generated constructor stub
     }
-   
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		/*Logica de las peticiones*/
 		String op=request.getParameter("op");
-		System.out.println(op);	
-		RequestDispatcher rd=request.getRequestDispatcher("jsp/comunes/principal.jsp");
+		AulaDAO adao=new AulaDAO();
+		RequestDispatcher rd=request.getRequestDispatcher("jsp/aulas/consultaaulas.jsp");
 		switch(op){
-		case "n":
-			rd=request.getRequestDispatcher("jsp/usuarios/altausuario.jsp");
-			System.out.println("path: " + request.getContextPath());
-			break;
-		case "i":
-			rd=request.getRequestDispatcher("jsp/usuarios/consultausuarios.jsp");
-			break;
-		case "ci":
-			rd=request.getRequestDispatcher("jsp/usuarios/editarusuario.jsp");
-			break;
-		case "e":
-			rd=request.getRequestDispatcher("jsp/usuarios/consultausuarios.jsp");
-			break;
-		case "d":
-			rd=request.getRequestDispatcher("jsp/usuarios/consultausuarios.jsp");
-			break;
-
-		case "cg":
-			rd=request.getRequestDispatcher("jsp/usuarios/consultausuarios.jsp");
-			break;
-
+			case "j":
+				rd.forward(request, response);
+				break;
+			case "cg":
+				String json=adao.consultaGeneral();
+				response.setContentType("application/json");
+		        PrintWriter out=response.getWriter();
+		        out.println(json);
+		        out.close();
+			
 		}
-		rd.forward(request, response);
+				
+		//response.setContentType("text/html;charset=UTF-8");
+		
 		
 	}
 

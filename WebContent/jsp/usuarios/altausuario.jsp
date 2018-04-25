@@ -5,7 +5,7 @@
 <div class="panel panel-info ">
 <div class="panel-heading"><div class="panel-title">Alta de Usuarios</div></div>
 <div class="panel-body">
-<form class="form-group">
+<form class="form-group" action="usuarios?op=i" method="post">
 	<label>Nombre de usuario:</label>
 	
 	<input type="text" name="nombre" placeholder="Nombre de Usuario" required="required" class="form-control">
@@ -26,6 +26,18 @@
 		<option value="S">Servicios Escolares</option>
 	</select>
 	<br>
+	<div id="msg">
+		<c:if test="${msg!=null}">
+		<c:choose>
+			<c:when test="${msg.tipo eq 'Succes'}">
+				<div class="alert alert-success alert-dismissible fade in">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					${msg.mensaje}
+				</div>
+			</c:when>
+		</c:choose>
+		</c:if>
+	</div>
 	<input type="submit" value="Guardar" class="btn btn-info">
 	<input type="button" value="Cancelar" class="btn btn-info">
 </form>

@@ -3,12 +3,14 @@
 <div class="container">
 <div class="mainbox col-md-8 col-md-offset-2">
 <div class="panel panel-info ">
-<div class="panel-heading"><div class="panel-title">Listado General Usuarios</div></div>
+<div class="panel-heading"><div class="panel-title">Listado General de Aulas</div></div>
 <div class="panel-body">
 <div class="form-group">
 <input type="text" name="filtro"
 placeholder="Busqueda por nombre del usuario" class="form-control">
 </div>
+<div id="datos"></div>
+<!-- 
 <table class="table table-hover table-bordered">
 <caption>
 <a href="#" class="btn btn-info"><img src="/titulaTEC/imagenes/add.gif">Agregar Aula</a>
@@ -18,8 +20,9 @@ placeholder="Busqueda por nombre del usuario" class="form-control">
   <tr>
   	<td>Nombre del Aula</td>
   	<td>Ubicaci&oacute;n</td>
-  	<td><a href="#"><img src="/titulaTEC/imagenes/editar.png"></a></td>
-  	<td><a href="#"><img src="/titulaTEC/imagenes/eliminar.png"></a></td>
+  	<td>Editar</td>
+  	<td>Eliminar</td>
+  	
   </tr>
 </thead>
 
@@ -27,14 +30,21 @@ placeholder="Busqueda por nombre del usuario" class="form-control">
   <tr>
     <td>Sala A</td>
     <td>Centro de Computo</td>
+    <td><a href="#"><img src="/titulaTEC/imagenes/editar.png"></a></td>
+  	<td><a href="#"><img src="/titulaTEC/imagenes/eliminar.png"></a></td>
   </tr>
   <tr>
     <td>E64</td>
     <td>Torcazas</td>
+    <td><a href="#"><img src="/titulaTEC/imagenes/editar.png"></a></td>
+  	<td><a href="#"><img src="/titulaTEC/imagenes/eliminar.png"></a></td>
   </tr>
 </tbody>
 </table>
+ -->
+<input type="button" value="Consultar" class="btn btn-info" onclick="consultaAulas();">
 <input type="button" value="Regresar" class="btn btn-info">
+
 </div>
 </div>
 </div>

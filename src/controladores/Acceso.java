@@ -10,55 +10,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Usuarios
+ * Servlet implementation class Acceso
  */
-@WebServlet(name="usuarios",urlPatterns="/usuarios")
-public class Usuarios extends HttpServlet {
+@WebServlet(name="acceso",urlPatterns="/acceso")
+public class Acceso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Usuarios() {
+    public Acceso() {
         super();
         // TODO Auto-generated constructor stub
     }
-   
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		/*Logica de las peticiones*/
+		String user=request.getParameter("username");
+		String pwd=request.getParameter("password");
 		String op=request.getParameter("op");
-		System.out.println(op);	
 		RequestDispatcher rd=request.getRequestDispatcher("jsp/comunes/principal.jsp");
 		switch(op){
-		case "n":
-			rd=request.getRequestDispatcher("jsp/usuarios/altausuario.jsp");
-			System.out.println("path: " + request.getContextPath());
-			break;
-		case "i":
-			rd=request.getRequestDispatcher("jsp/usuarios/consultausuarios.jsp");
-			break;
-		case "ci":
-			rd=request.getRequestDispatcher("jsp/usuarios/editarusuario.jsp");
-			break;
-		case "e":
-			rd=request.getRequestDispatcher("jsp/usuarios/consultausuarios.jsp");
-			break;
-		case "d":
-			rd=request.getRequestDispatcher("jsp/usuarios/consultausuarios.jsp");
-			break;
-
-		case "cg":
-			rd=request.getRequestDispatcher("jsp/usuarios/consultausuarios.jsp");
-			break;
-
+			case "l":
+				if(!user.equals("pepe") || !pwd.equals("123")){
+					rd=request.getRequestDispatcher("jsp/comunes/error.jsp");
+				}
+				break;
 		}
 		rd.forward(request, response);
-		
 	}
 
 	/**
