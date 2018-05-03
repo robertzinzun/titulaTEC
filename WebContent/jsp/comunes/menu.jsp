@@ -47,6 +47,12 @@
           <li><a href="Opciones?op=l">Consulta general</a></li>
         </ul>
       </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Actos <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Actos?op=n">Alta de Actos</a></li>
+          <li><a href="#">Consulta general</a></li>
+        </ul>
+      </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Ayuda<span class="caret"></span></a>
       <ul class="dropdown-menu">
           <li><a href="#">Acerca de</a></li>

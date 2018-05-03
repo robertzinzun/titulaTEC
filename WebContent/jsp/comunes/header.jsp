@@ -20,7 +20,7 @@
 <script type="text/javascript" src="/titulaTEC/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/titulaTEC/js/Global.js"></script>
 </head>
-<body>
+<body onload="generaHoras();">
 <header>
 	<img src="/titulaTEC/imagenes/logoITESZ.png"/>
 	<br/>

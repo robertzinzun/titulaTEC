@@ -99,3 +99,64 @@ function generarTablaAulas(datos){
 		document.getElementById("datos").innerHTML=table;
 	}
 }
+function generaHoras(){
+	var hi=document.getElementById("horaInicio");
+	for(var i=8;i<=19;i++){
+		var option=document.createElement("option");
+		var texto=document.createTextNode(i+":00");
+		option.setAttribute("value", i+":00");
+		option.appendChild(texto);
+		hi.appendChild(option);
+	}
+	var hf=document.getElementById("horaFin");
+	for(var i=8;i<=20;i++){
+		var option=document.createElement("option");
+		var texto=document.createTextNode(i+":00");
+		option.setAttribute("value", i+":00");
+		option.appendChild(texto);
+		hf.appendChild(option);
+	}
+	document.getElementById("guardar").disabled=true;
+}
+function mostrarAlumnos(){
+	var select=document.getElementById("carrera");
+	if(select.value!=0){
+		document.getElementById("guardar").disabled=false;
+		XMLHttpRequest
+		ajax = new XMLHttpRequest();
+		ajax.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				generarOpcionesAlumnos(this.responseText);
+			}
+		};
+		ajax.open("get", "Actos?op=cac&idCarrera="+select.value, true);
+		ajax.send();
+	}
+	else{
+		document.getElementById("guardar").disabled=true;
+	}
+}
+function generarOpcionesAlumnos(datos){
+	//alert(datos);
+	borrarAlumnos();
+	var array=eval(datos);
+	var select=document.getElementById("alumno");
+	for(var i=0;i<array.length;i++){
+		var option=document.createElement("option");
+		var texto=document.createTextNode(array[i].nombre);
+		option.setAttribute("value", array[i].nc);
+		option.appendChild(texto);
+		select.appendChild(option);
+	}
+}
+function borrarAlumnos(){
+	var select=document.getElementById("alumno");
+	for(var i=select.options.length-1;i>0;i--){
+		select.removeChild(select.options[i]);
+	}
+}
+
+
+
+
+

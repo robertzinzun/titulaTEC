@@ -6,6 +6,8 @@ import java.sql.Statement;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import modelo.Opcion;
+import java.util.*;
 
 
 
@@ -40,6 +42,31 @@ public class OpcionesDAO {
 		}
 		System.out.println(array.toString());
 		return array.toString();
+	}
+	public ArrayList<Opcion> consultaOpciones(){
+		String sql="select idOpcion,nombre,descripcion "
+				+ "from opciones";
+		ArrayList<Opcion> array=new ArrayList<Opcion>();
+		try{
+			ConexionBD con=new ConexionBD();
+			Statement sentencia=con.getCn().createStatement();
+			ResultSet rs=sentencia.executeQuery(sql);
+			while(rs.next()){
+				Opcion o=new Opcion();
+				o.setId(rs.getInt("idOpcion"));
+				o.setNombre(rs.getString("nombre"));
+				o.setDescripcion(rs.getString("descripcion"));
+				array.add(o);	
+			}
+			sentencia.close();
+			rs.close();
+			con.cerrar();
+		}
+		catch(SQLException e){
+			System.out.println("Error al ejecutar la consulta"
+					+e.getMessage());
+		}
+		return array;
 	}
 
 }

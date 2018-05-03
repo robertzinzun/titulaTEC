@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import datos.AlumnosDAO;
 import datos.AulaDAO;
 import datos.CarrerasDAO;
+import datos.OpcionesDAO;
 
 /**
  * Servlet implementation class Actos
@@ -39,8 +40,10 @@ public class Actos extends HttpServlet {
 			case "n":
 				CarrerasDAO cdao=new CarrerasDAO();
 				AulaDAO adao=new AulaDAO();
+				OpcionesDAO odao=new OpcionesDAO();
 				request.setAttribute("carreras", cdao.consultaGeneral());
 				request.setAttribute("aulas", adao.consultaAulas());
+				request.setAttribute("opciones", odao.consultaOpciones());
 				RequestDispatcher rd=request.getRequestDispatcher("jsp/actos/alta.jsp");
 				rd.forward(request, response);
 				break;
