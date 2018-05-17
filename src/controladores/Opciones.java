@@ -11,11 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import datos.OpcionesDAO;
+import modelo.Opcion;
 
 /**
  * Servlet implementation class Opciones
  */
-@WebServlet(name="opciones",urlPatterns="/Opciones")
+@WebServlet(name="Opciones",urlPatterns="/Opciones")
 public class Opciones extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -46,6 +47,19 @@ public class Opciones extends HttpServlet {
 			response.setContentType("application/json");
 			out.println(json);
 			out.close();
+			break;
+		case "n":
+			 rd=request.
+				getRequestDispatcher("jsp/opciones/alta.jsp");
+			 rd.forward(request, response);
+			 break;
+		case "i":
+			Opcion o=new Opcion();
+			odao=new OpcionesDAO();
+			o.setNombre(request.getParameter("tipo"));
+			o.setDescripcion(request.getParameter("desc"));
+			odao.insertar(o);
+			rd.forward(request, response);
 			
 		}
 	}
@@ -56,6 +70,7 @@ public class Opciones extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
 	}
 
 }

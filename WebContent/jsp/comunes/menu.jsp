@@ -43,7 +43,7 @@
       </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Opciones <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Alta de Opciones</a></li>
+          <li><a href="Opciones?op=n">Alta de Opciones</a></li>
           <li><a href="Opciones?op=l">Consulta general</a></li>
         </ul>
       </li>

@@ -15,7 +15,6 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="/titulaTEC/css/boostrap-theme.min.css">
 <link href="/titulaTEC/css/estilo.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/titulaTEC/js/global.js"></script>
 <script type="text/javascript" src="/titulaTEC/js/jquery.min.js"></script>
 <script type="text/javascript" src="/titulaTEC/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/titulaTEC/js/Global.js"></script>

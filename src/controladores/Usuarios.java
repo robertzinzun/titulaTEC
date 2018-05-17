@@ -37,7 +37,6 @@ public class Usuarios extends HttpServlet {
 		switch(op){
 		case "n":
 			rd=request.getRequestDispatcher("jsp/usuarios/altausuario.jsp");
-			System.out.println("path: " + request.getContextPath());
 			break;
 		case "i":
 			rd=request.getRequestDispatcher("jsp/usuarios/consultausuarios.jsp");

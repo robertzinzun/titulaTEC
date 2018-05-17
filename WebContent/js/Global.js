@@ -155,6 +155,12 @@ function borrarAlumnos(){
 		select.removeChild(select.options[i]);
 	}
 }
+function filtrar(){
+	var value = $("#filtrar").val().toLowerCase();
+    $("#datos tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+}
 
 
 

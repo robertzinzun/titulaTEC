@@ -6,6 +6,9 @@ import java.sql.Statement;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import java.sql.PreparedStatement;
+
 import modelo.Opcion;
 import java.util.*;
 
@@ -67,6 +70,24 @@ public class OpcionesDAO {
 					+e.getMessage());
 		}
 		return array;
+	}
+	public boolean insertar(Opcion o){
+		String query="insert into opciones values(null,?,?)";
+		boolean ban=false;
+		try{
+			ConexionBD con=new ConexionBD();
+			PreparedStatement ps=con.getCn().prepareStatement(query);
+			ps.setString(1, o.getNombre());
+			ps.setString(2, o.getDescripcion());
+			ps.execute();
+			ps.close();
+			con.cerrar();
+			ban=true;
+		}
+		catch(SQLException e){
+			System.out.println("Error:"+e.getMessage());
+		}
+		return ban;
 	}
 
 }

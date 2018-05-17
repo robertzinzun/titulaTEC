@@ -5,7 +5,7 @@
 <div class="panel panel-info ">
 <div class="panel-heading"><div class="panel-title">Alta de Opciones de Titulacion</div></div>
 <div class="panel-body">
-<form class="form-group">
+<form class="form-group" action="Opciones?op=i" method="post">
 	<label>Tipo de Titulacion:</label>
 	
 	<input type="text" name="tipo" placeholder="Tipo de titulacion" required="required" class="form-control">

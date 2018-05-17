@@ -7,9 +7,10 @@
 <div class="panel-body">
 <div class="form-group">
 <input type="text" name="filtro" 
-placeholder="Busqueda por nombre del usuario" class="form-control">
+placeholder="Busqueda por nombre del usuario" class="form-control" id="filtrar" 
+onkeyup="filtrar();">
 </div>
-<table class="table table-hover table-bordered">
+<table class="table table-hover table-bordered" id="datos">
 <caption>
 <a href="#" class="btn btn-info"><img src="/titulaTEC/imagenes/add.gif">Agregar Usuario</a>
 </caption>
