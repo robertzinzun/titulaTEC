@@ -58,8 +58,17 @@ public class Opciones extends HttpServlet {
 			odao=new OpcionesDAO();
 			o.setNombre(request.getParameter("tipo"));
 			o.setDescripcion(request.getParameter("desc"));
-			odao.insertar(o);
+			if(odao.insertar(o)){
+				rd=request.getRequestDispatcher("jsp/opciones/consultaGeneral.jsp");
+				request.setAttribute("opciones",odao.consultaOpciones());
+				
+			}
+			else{
+				rd=request.getRequestDispatcher("jsp/opciones/alta.jsp");
+				
+			}
 			rd.forward(request, response);
+			break;
 			
 		}
 	}
