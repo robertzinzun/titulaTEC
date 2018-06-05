@@ -34,7 +34,6 @@
 					</div>
 						<input type="submit" value="Enviar" class="btn btn-info" />
 						<input type="button" value="Registrar usuario" class="btn btn-info" onclick="reenviar('usuarios?op=n');"/>
-						<a href="jsp/comunes/principal.jsp">Principal</a>
 				</form>
 			</div>
 		</div>

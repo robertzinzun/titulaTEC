@@ -27,11 +27,29 @@ onkeyup="filtrar();">
 	<td>${opcion.id}</td>
 	<td>${opcion.nombre}</td>
 	<td>${opcion.descripcion}</td>
-	<td><a href="Opciones?op=e&idOpcion=${opcion.id}"><img src="/titulaTEC/imagenes/editar.png"></a></td>
-	<td><a href="Opciones?op=d&idOpcion=${opcion.id}"><img src="/titulaTEC/imagenes/eliminar.png"></a></td>
+	<td><a href="Opciones?op=ci&idOpcion=${opcion.id}"><img src="/titulaTEC/imagenes/editar.png"></a></td>
+	<td><img src="/titulaTEC/imagenes/eliminar.png" onclick="eliminarOpcion('${opcion.id}','${opcion.nombre}');" data-toggle="modal" data-target="#myModal"></td>
 </tr>
 </c:forEach>
 </table>
+<div id="paginacion">
+<ul class="pagination">
+<c:forEach var="i" begin="1" end="${paginas}" step="1">
+	<c:choose>
+		<c:when test="${pag eq i}">
+			<li id="pagina${i}" class="active">
+				<a href="Opciones?op=cp&page=${i}">${i}</a>
+			</li>
+		</c:when>
+		<c:otherwise>
+			<li id="pagina${i}">
+				<a href="Opciones?op=cp&page=${i}">${i}</a>
+			</li>
+		</c:otherwise>		
+	</c:choose>	
+</c:forEach>
+</ul>
+</div>
 <input type="button" value="Regresar" class="btn btn-info">
 </div>
 </div>
@@ -46,7 +64,7 @@ onkeyup="filtrar();">
         <h4 class="modal-title">Eliminaci&oacute;n de Registros</h4>
       </div>
       <div class="modal-body">
-        <p id="texto"></p>
+        <p id="textoMostrar"></p>
         
       </div>
       <div class="modal-footer">

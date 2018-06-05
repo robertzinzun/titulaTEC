@@ -11,7 +11,7 @@
 	<input type="text" name="tipo" placeholder="Tipo de titulacion" required="required" class="form-control">
 	<br>
 	<label>Descripcion:</label>
-	<textarea type="text" name="desc" placeholder="Descricpion" required="required" class="form-control"></textarea>
+	<textarea  name="desc" placeholder="Descricpion" required="required" class="form-control"></textarea>
 	<br>
 	<input type="submit" value="Guardar" class="btn btn-info">
 	<input type="button" value="Cancelar" class="btn btn-info">

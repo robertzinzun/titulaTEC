@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import datos.AulaDAO;
+import modelo.Aula;
 
 /**
  * Servlet implementation class Aulas
@@ -36,13 +37,27 @@ public class Aulas extends HttpServlet {
 		AulaDAO adao=new AulaDAO();
 		RequestDispatcher rd=request.getRequestDispatcher("jsp/aulas/consultaaulas.jsp");
 		switch(op){
+			case "n":
+				rd=request.getRequestDispatcher("jsp/aulas/altaaula.jsp");
+				rd.forward(request, response);
+				break;
+			case "i":
+				Aula a=new Aula();
+				a.setNombre(request.getParameter("nombre"));
+				a.setUbicacion(request.getParameter("ubicacion"));
+				String msg=adao.insertar(a);
+				response.setContentType("application/json");
+		        PrintWriter out=response.getWriter();
+		        out.println(msg);
+		        out.close();
+				break;
 			case "j":
 				rd.forward(request, response);
 				break;
 			case "cg":
 				String json=adao.consultaGeneral();
 				response.setContentType("application/json");
-		        PrintWriter out=response.getWriter();
+		        out=response.getWriter();
 		        out.println(json);
 		        out.close();
 			

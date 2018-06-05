@@ -31,7 +31,7 @@
       </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Aulas <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="../aulas/altaaula.jsp">Alta de Aulas</a></li>
+          <li><a href="aulas?op=n">Alta de Aulas</a></li>
           <li><a href="aulas?op=j">Consulta general</a></li>
         </ul>
       </li>
@@ -45,6 +45,8 @@
         <ul class="dropdown-menu">
           <li><a href="Opciones?op=n">Alta de Opciones</a></li>
           <li><a href="Opciones?op=l">Consulta general</a></li>
+          <li><a href="Opciones?op=cgo">Consulta general</a></li>
+          
         </ul>
       </li>
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Actos <span class="caret"></span></a>
@@ -61,7 +63,7 @@
 
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuario <span class="caret"></span></a>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuario:${usuario.nombre} <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Editar perfil</a></li>
           <li><a href="#">Cerrar Sesi&oacute;n</a></li>

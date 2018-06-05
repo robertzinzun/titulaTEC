@@ -1,5 +1,6 @@
 package datos;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -69,5 +70,26 @@ public class AulaDAO {
 		
 		return lista;
 	}
-
+	public String insertar(Aula a){
+		String sql="insert into aulas values(null,?,?)";
+		JSONObject msg=new JSONObject();
+		try{
+			ConexionBD cn=new ConexionBD();
+			PreparedStatement ps=cn.getCn().prepareStatement(sql);
+			ps.setString(1, a.getNombre());
+			ps.setString(2, a.getUbicacion());
+			ps.execute();
+			msg.put("tipo", "ok");
+			msg.put("msg", "Aula registrada con exito.");
+			ps.close();
+			cn.cerrar();
+		}
+		catch(SQLException e){
+			msg.put("tipo", "error");
+			msg.put("msg", "Error al registrar el aula, consulte el log para mas detalles.");
+			System.out.println("Error al ejecutar la consulta:"+sql);
+			System.out.println(e.getMessage());
+		}
+		return msg.toJSONString();
+	}
 }

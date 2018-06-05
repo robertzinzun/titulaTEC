@@ -2,16 +2,27 @@
  * 
  */
 function reenviar(url){
-	alert('Enviando a:'+url);
 	location.href=url;
 }
+
+function eliminarOpcion(id,nombre){
+	$("#textoMostrar").html('¿Estas seguro de eliminar a la opcion '+nombre+'?');
+	$("#boton").html("<input type=\"button\" value=\"Aceptar\" class=\"btn btn-primary\" data-dismiss=\"modal\" " +
+	"onclick=\"borrarOpcion('"+id+"');\">");
+}
 function eliminar(id,nombre,tipo){
-	document.getElementById("texto") .innerHTML="¿Estas seguro de eliminar al "+tipo+":"+nombre+" ?";
+	document.getElementById("texto").innerHTML="¿Estas seguro de eliminar al "+tipo+":"+nombre+" ?";
 	document.getElementById("boton").innerHTML="<input type=\"button\" value=\"Aceptar\" class=\"btn btn-primary\" data-dismiss=\"modal\" " +
 			"onclick=\"borrar('"+id+"');\">";
+			
 }
 function borrar(id){
 	alert("Borrando a "+id);
+}
+
+function borrarOpcion(id){
+	var url="Opciones?op=d&idOpcion="+id;
+	reenviar(url);
 }
 function mostrarPwd(){
 	var chb=document.getElementById("verpwd");
@@ -137,7 +148,6 @@ function mostrarAlumnos(){
 	}
 }
 function generarOpcionesAlumnos(datos){
-	//alert(datos);
 	borrarAlumnos();
 	var array=eval(datos);
 	var select=document.getElementById("alumno");
@@ -161,6 +171,22 @@ function filtrar(){
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
 }
+function insertarAula(){	
+	$.ajax({
+		url:'aulas?op=i',
+		async:true,
+		data:{"nombre":$("#nombre").val(),"ubicacion":$("#ubicacion").val()},
+		type:'get',
+		dataType:'JSON',
+		success:function(data){
+			var json=eval(data);
+			$("#notificaciones").html(json.msg);
+			if(json.tipo=='ok')
+				$("#notificaciones").css("class","alert alert-success");
+		}
+		});
+}
+
 
 
 

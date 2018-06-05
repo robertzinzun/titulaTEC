@@ -9,18 +9,19 @@
 	<label for="nombre">Nombre del aula:</label>
 	<input type="text" name="nombre" placeholder="Nombre del aula" required="required" class="form-control" id="nombre">
 	<label for="ubi">Ubicaci&oacute;n</label>
-	<select class="form-control" name="ubi",id="ubi">
-		<option value=""></option>
-		<option value="ep">Edificio Principal</option>
-		<option value="cc">Centro de Computo</option>
-		<option value="ea">Edificio de Alimentarias</option>
-		<option value="ei">Edificio de Industrial</option>
-		<option value="ee">Edificio de electronica</option>
-		<option value="to">Torcazas</option>
-		<option value="ec">Ecuandureo</option>
+	<select class="form-control" name="ubicacion" id="ubicacion">
+		<option>Edificio Principal</option>
+		<option>Centro de Computo</option>
+		<option>Edificio de Alimentarias</option>
+		<option>Edificio de Industrial</option>
+		<option>Edificio de electronica</option>
+		<option>Torcazas</option>
+		<option>Ecuandureo</option>
 	</select>
 	<br>
-	<input type="submit" value="Guardar" class="btn btn-info">
+	<div id="notificaciones">
+	</div>
+	<input type="button" value="Guardar" class="btn btn-info" onclick="insertarAula();">
 	<input type="button" value="Cancelar" class="btn btn-info">
 </form>
 </div>

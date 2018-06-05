@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import datos.UsuariosDAO;
+import modelo.Usuario;
 
 /**
  * Servlet implementation class Acceso
@@ -35,8 +39,15 @@ public class Acceso extends HttpServlet {
 		RequestDispatcher rd=request.getRequestDispatcher("jsp/comunes/principal.jsp");
 		switch(op){
 			case "l":
-				if(!user.equals("pepe") || !pwd.equals("123")){
+				UsuariosDAO udao=new UsuariosDAO();
+				Usuario u=udao.validar(user, pwd);
+				if(u.getNombre()==null){
 					rd=request.getRequestDispatcher("jsp/comunes/error.jsp");
+				}
+				else{
+					HttpSession sesion=request.getSession();
+					sesion.setAttribute("usuario",u);
+					sesion.setMaxInactiveInterval(10*60);
 				}
 				break;
 		}
