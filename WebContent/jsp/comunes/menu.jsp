@@ -65,8 +65,8 @@
     <ul class="nav navbar-nav navbar-right">
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuario:${usuario.nombre} <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Editar perfil</a></li>
-          <li><a href="#">Cerrar Sesi&oacute;n</a></li>
+          <li><a href="acceso?op=e">Editar perfil</a></li>
+          <li><a href="acceso?op=cs">Cerrar Sesi&oacute;n</a></li>
         </ul>
       </li>
     </ul>

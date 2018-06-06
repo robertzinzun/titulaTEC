@@ -50,7 +50,7 @@ onkeyup="filtrar();">
 </c:forEach>
 </ul>
 </div>
-<input type="button" value="Regresar" class="btn btn-info">
+<input type="button" value="Regresar" class="btn btn-info" onclick="reenviar('Opciones?op=reg');">
 </div>
 </div>
 </div>

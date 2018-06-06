@@ -33,12 +33,13 @@ public class Acceso extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String user=request.getParameter("username");
-		String pwd=request.getParameter("password");
+		
 		String op=request.getParameter("op");
 		RequestDispatcher rd=request.getRequestDispatcher("jsp/comunes/principal.jsp");
 		switch(op){
 			case "l":
+				String user=request.getParameter("username");
+				String pwd=request.getParameter("password");
 				UsuariosDAO udao=new UsuariosDAO();
 				Usuario u=udao.validar(user, pwd);
 				if(u.getNombre()==null){
@@ -49,6 +50,29 @@ public class Acceso extends HttpServlet {
 					sesion.setAttribute("usuario",u);
 					sesion.setMaxInactiveInterval(10*60);
 				}
+				break;
+			case "e":
+				//u=(Usuario)request.getSession().getAttribute("usuario");
+				rd=request.getRequestDispatcher("jsp/usuarios/editarusuario.jsp");
+				//request.setAttribute("usuario", u);
+				break;
+			case "g":
+				u=new Usuario();
+				u.setClave(request.getParameter("pwd"));
+				u.setNombre(request.getParameter("nombre"));
+				u.setEmail(request.getParameter("email"));
+				u.setTipo(request.getParameter("tipo"));
+				u.setEstatus(request.getParameter("estatus"));
+				u.setId(Integer.parseInt(request.getParameter("idUsuario")));
+				//realizar la modificacion a la bd
+				udao=new UsuariosDAO();
+				udao.actualizar(u);
+				request.getSession().setAttribute("usuario", u);
+				rd=request.getRequestDispatcher("jsp/usuarios/editarusuario.jsp");
+				break;
+			case "cs":
+				request.getSession().invalidate();
+				rd=request.getRequestDispatcher("index.jsp");
 				break;
 		}
 		rd.forward(request, response);

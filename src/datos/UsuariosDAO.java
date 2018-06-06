@@ -38,5 +38,26 @@ public class UsuariosDAO {
 		}
 		return u;
 	}
-
+	public boolean actualizar(Usuario u){
+		String sql="update usuarios set nombre=?,clave=?,email=?,estatus=?,tipo=? where idUsuario=?";
+		boolean ban=false;
+		try{
+			ConexionBD cn=new ConexionBD();
+			PreparedStatement ps=cn.getCn().prepareStatement(sql);
+			ps.setString(1, u.getNombre());
+			ps.setString(2, u.getClave());
+			ps.setString(3, u.getEmail());
+			ps.setString(4,u.getEstatus());
+			ps.setString(5, u.getTipo());
+			ps.setInt(6, u.getId());
+			ps.execute();
+			ban=true;
+			ps.close();
+			cn.cerrar();
+		}
+		catch(SQLException e){
+			System.out.println("Error:"+e.getMessage());
+		}
+		return ban;
+	}
 }

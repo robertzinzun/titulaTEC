@@ -111,6 +111,10 @@ public class Opciones extends HttpServlet {
 			request.setAttribute("pag", pagina);
 			rd.forward(request, response);
 			break;
+		case "reg":
+			rd=request.getRequestDispatcher("jsp/comunes/principal.jsp");
+			rd.forward(request, response);
+			break;
 		}
 	}
 
